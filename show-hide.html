@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="angular.min.js"></script>
+	<style type="text/css">
+		body {
+			font-family: 'Trebuchet MS';
+			font-size: 1.2rem;
+		}
+	</style>
+</head>
+<body ng-app="meuApp" ng-controller="meuCtrl">
+
+<h1>AngularJS - Repeat</h1>
+
+<p ng-show="hora > 17">Estamos abertos às {{hora}}h</p>
+
+
+<script type="text/javascript">
+	var app = angular.module('meuApp', []);
+	app.controller('meuCtrl', function($scope){
+		
+		$scope.hora = 17;
+
+	});
+</script>
+</body>
+</html>

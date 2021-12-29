@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="angular.min.js"></script>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			font-family: 'Trebuchet MS';
+			font-size: 1.2rem;
+			padding: 50px 100px;
+		}
+		button {
+			padding: 12px;
+			width: 120px;
+			background: #0B243B;
+			border: 0 none;
+			color: #FFF;
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+		#contador {
+			font-size: 5rem;
+			font-weight: bold;
+			line-height: 0;
+		}
+	</style>
+</head>
+<body ng-app="meuApp" ng-controller="meuCtrl">
+
+<h1>AngularJS - Eventos</h1>
+
+<!-- <button ng-click="contador = contador+1">+1</button>
+<button ng-click="contador = contador+2">+2</button>
+<button ng-click="contador = contador+3">+3</button> -->
+
+<button ng-click="adicionar()">+1</button>
+
+<p id="contador">{{contador}}</p>
+
+
+<script type="text/javascript">
+	var app = angular.module('meuApp', []);
+	app.controller('meuCtrl', function($scope){
+		
+		$scope.contador = 0;
+		$scope.adicionar = function(){
+			$scope.contador = $scope.contador+1;
+		}
+
+	});
+</script>
+</body>
+</html>

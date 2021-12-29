@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="../angular.min.js"></script>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			font-family: 'Trebuchet MS';
+		}
+		table {
+			border: 1px solid #EEE;
+			padding: 0;
+		}
+		th {
+			border: 1px solid #EEE;
+			text-align: left;
+			padding: 8px;
+			margin: 0;
+		}
+		td {
+			border: 1px solid #eee;
+			padding: 8px;
+		}
+	</style>
+</head>
+<body ng-app="meuApp" ng-controller="meuCtrl">
+
+	<input type="text" ng-model="filtrar">
+
+	<table border="0" width="100%">
+		
+		<tr>
+			<th>Nome</th>
+			<th>Gênero</th>
+			<th>Idade</th>
+		</tr>
+
+		<tr ng-repeat="d in html | filter:filtrar">
+			<td>{{d.name}}</td>
+			<td>{{d.gender}}</td>
+			<td>{{d.age}}</td>
+		</tr>
+
+	</table>
+	
+
+<script>
+	
+	var app = angular.module('meuApp', []);
+	app.controller('meuCtrl', function($scope, $http){
+	
+		$http.get('dados.json').then(function(response){
+			$scope.html = response.data;
+			console.log($scope.html);
+		});
+
+	});
+
+
+</script>
+</body>
+</html>

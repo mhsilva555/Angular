@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		
+	</style>
+</head>
+<body ng-app="meuApp" ng-controller="meuCtrl">
+
+<h1>AngularJS - Controllers</h1>
+
+<textarea ng-model="texto"></textarea>
+
+<p>{{texto}}</p>
+
+<script src="angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('meuApp', []);
+	app.controller('meuCtrl', function($scope){
+		$scope.texto = "Mudando Conteúdo";
+	});
+</script>
+</body>
+</html>

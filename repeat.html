@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		
+	</style>
+</head>
+<body ng-app="meuApp" ng-controller="meuCtrl">
+
+<h1>AngularJS - Repeat</h1>
+
+<ul>
+	<li ng-repeat="key in ingredientes">
+		{{key.qnt}} de {{key.nome}}
+	</li>
+</ul>
+
+
+<script src="angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('meuApp', []);
+	app.controller('meuCtrl', function($scope){
+		
+		$scope.ingredientes = [
+			{'nome':'farinha', 'qnt':'300g'},
+			{'nome':'ovo','qnt':'3'},
+			{'nome':'leite','qnt':'500g'},
+			{"nome":"trigo","qnt":'250g'},
+			{'nome':'chocolate','qnt':'600g'},
+		];
+
+	});
+</script>
+</body>
+</html>
